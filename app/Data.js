@@ -2,27 +2,28 @@ export const NAV_LINKS = [
   {
     label: "Why Us?",
     dropdown: [
-      { title: "Our Story", desc: "How LedgerPro was built", href: "/our-story" },
+      { title: "Our Story", desc: "How BisonTechs was built", href: "/our-story" },
       { title: "Customers", desc: "10,000+ happy businesses", href: "/customers" },
     ],
   },
   {
     label: "Product",
     dropdown: [
-      { title: "General Ledger", desc: "Double-entry bookkeeping & journal entries", href: "/general-ledger" },
-      { title: "Invoicing", desc: "Send & track invoices", href: "/invoicing" },
-      { title: "Bills & Purchase Orders", desc: "Manage payables easily", href: "BillsPurchaseOrderpage" },
-      { title: "Bank Accounts", desc: "Add your Bank Account", href: "BankAccount" },
-      { title: "Financial Reports", desc: "P&L, Balance Sheet, Cash Flow & more", href: "/financial-reports" },
-      { title: "Chart of Accounts", desc: "Organize your full account structure", href: "/chart-of-accounts" },
+      { title: "Financial Management", desc: "Complete accounting, P&L, and financial reports", href: "/products" },
+      { title: "HR & Payroll", desc: "Employee management, payroll, and benefits", href: "/products" },
+      { title: "Inventory Management", desc: "Stock control, warehousing, and logistics", href: "/products" },
+      { title: "CRM & Sales", desc: "Customer relationships and sales pipeline", href: "/products" },
+      { title: "Supply Chain", desc: "Procurement, vendors, and purchase orders", href: "/products" },
+      { title: "Manufacturing", desc: "Production planning and shop floor control", href: "/products" },
+      { title: "Project Management", desc: "Resource allocation and project tracking", href: "/products" },
     ],
   },
   {
     label: "Resources",
     dropdown: [
-      { title: "User Guide", desc: "Step-by-step app documentation", href: "user-guide" },
+      { title: "User Guide", desc: "Step-by-step ERP documentation", href: "user-guide" },
       { title: "Help Center", desc: "Guides & tutorials", href: "help-center" },
-      { title: "Blog", desc: "Accounting tips & news", href: "blog" },
+      { title: "Blog", desc: "ERP tips & business insights", href: "blog" },
       { title: "Contact Support", desc: "Reach our team anytime", href: "contact-support" },
     ],
   },
@@ -30,84 +31,90 @@ export const NAV_LINKS = [
 ];
 
 export const FEATURES = [
-  { icon: "📒", title: "General Ledger", desc: "Full double-entry general ledger with real-time posting and audit trail." },
-  { icon: "💳", title: "Accounts Payable & Receivable", desc: "Manage what you owe and what's owed to you — automated and on time." },
-  { icon: "🏦", title: "Bank Accounts", desc: "Connect all your bank account." },
-  { icon: "📊", title: "Balance Sheet", desc: "Instant balance sheet, income statement, and cash flow — always up to date." },
-  { icon: "🧾", title: "Bills & Purchase Orders", desc: "Upload bills, create POs, approve payments with a single click." },
-  { icon: "📈", title: "Reports & Analytics", desc: "Trial Balance, P&L, Vendor Reports, Journal Entries, and custom dashboards." },
-  { icon: "👥", title: "Customers & Vendors", desc: "Manage all your customers, vendors, and suppliers in one organized place." },
-  { icon: "💹", title: "Capital, Equity & Loans", desc: "Track equity, capital accounts, loan schedules, and payments made/received." },
+  { icon: "📒", title: "Financial Management", desc: "Complete accounting, general ledger, P&L, balance sheet, and financial reporting." },
+  { icon: "�", title: "HR & Payroll", desc: "Employee onboarding, payroll processing, benefits administration, and compliance." },
+  { icon: "📦", title: "Inventory Management", desc: "Real-time stock tracking, warehouse management, and automated reorder points." },
+  { icon: "🤝", title: "CRM & Sales", desc: "Lead tracking, customer relationships, sales pipeline, and quote management." },
+  { icon: "🚚", title: "Supply Chain", desc: "Procurement, vendor management, purchase orders, and logistics optimization." },
+  { icon: "🏭", title: "Manufacturing", desc: "Production planning, bill of materials, shop floor control, and quality management." },
+  { icon: "�", title: "Business Intelligence", desc: "Real-time dashboards, KPIs, and analytics across all business functions." },
+  { icon: "�", title: "Integrations", desc: "Connect with 100+ apps including banks, payment gateways, and productivity tools." },
 ];
 
 export const PLANS = [
   {
-    name: "Monthly", price: "$5", period: "/month",
-    desc: "Flexible month-to-month access for growing businesses.",
-    features: ["All Core Accounting Features", "Unlimited Bank Accounts", "Real-time Financial Reports", "Customer & Vendor Portals", "Priority Email Support", "API Access"],
-    cta: "Start Monthly", highlight: false,
+    name: "Starter", price: "$29", period: "/month",
+    desc: "Essential ERP modules for small businesses getting started.",
+    features: ["Financial Management", "Basic Inventory", "HR & Payroll (up to 10 employees)", "CRM Essentials", "Standard Reports", "Email Support"],
+    cta: "Start Starter", highlight: false,
   },
   {
-    name: "Yearly", price: "$150", period: "/year",
-    desc: "Best value for established firms. Save over 30% annually.",
-    features: ["Everything in Monthly", "Dedicated Account Manager", "Multi-user Collaboration", "Custom Report Builder", "Advance Tax Export", "24/7 Priority Support"],
-    cta: "Start Yearly", highlight: true,
+    name: "Professional", price: "$79", period: "/month",
+    desc: "Complete ERP solution for growing businesses. Save over 30% annually.",
+    features: ["Everything in Starter", "Advanced Manufacturing", "Supply Chain Management", "Business Intelligence", "Multi-location Support", "API Access", "Priority Support"],
+    cta: "Start Professional", highlight: true,
   },
 ];
 
 export const TESTIMONIALS = [
-  { name: "Sarah Mitchell", role: "CFO, TechVenture Inc.", text: "Finally, accounting software that thinks the way we do. Our month-end close went from 5 days to half a day.", avatar: "SM", color: "#6c63ff" },
-  { name: "Faiq Khan", role: "Co-founder, Buildify", text: "The real-time dashboard alone is worth it. I always know exactly where our business stands financially.", avatar: "RK", color: "#00ffbe" },
-  { name: "Priya Nair", role: "Senior Accountant, NovaCPA", text: "Managing 30+ clients used to be chaos. Now it's completely streamlined. This is the future of accounting.", avatar: "PN", color: "#ff6b6b" },
+  { name: "Sarah Mitchell", role: "CEO, TechVenture Inc.", text: "BisonTechs transformed how we run our entire business. From finance to HR to inventory, everything is now connected and automated.", avatar: "SM", color: "#6c63ff" },
+  { name: "Faiq Khan", role: "Operations Director, Buildify", text: "The manufacturing module alone saved us 20 hours per week. Real-time visibility across all departments is a game-changer.", avatar: "RK", color: "#00ffbe" },
+  { name: "Priya Nair", role: "CFO, Global Manufacturing Co.", text: "We replaced 5 different systems with BisonTechs. One platform for finance, HR, inventory, and CRM. This is the future of ERP.", avatar: "PN", color: "#ff6b6b" },
 ];
 
-// Clean black/white logos — accounting-industry companies (like the screenshot style)
+// Professional company logos — accounting/ERP industry leaders
 export const TRUSTED_COMPANIES = [
   {
     name: "Deloitte",
     logo: (
-      <svg viewBox="0 0 120 36" width="120" height="36">
-        <text x="0" y="27" fontFamily="'Georgia',serif" fontSize="26" fontWeight="700" fill="#111" letterSpacing="-0.5">Deloitte.</text>
+      <svg viewBox="0 0 140 40" width="140" height="40">
+        <text x="0" y="30" fontFamily="'Arial',sans-serif" fontSize="28" fontWeight="700" fill="#111" letterSpacing="-0.5">Deloitte</text>
+        <circle cx="128" cy="12" r="6" fill="#86bc25" />
       </svg>
     ),
   },
   {
     name: "KPMG",
     logo: (
-      <svg viewBox="0 0 90 36" width="90" height="36">
-        <text x="0" y="27" fontFamily="'Helvetica Neue',sans-serif" fontSize="28" fontWeight="900" fill="#111" letterSpacing="2">KPMG</text>
+      <svg viewBox="0 0 100 40" width="100" height="40">
+        <text x="0" y="30" fontFamily="'Arial',sans-serif" fontSize="32" fontWeight="900" fill="#111" letterSpacing="1">KPMG</text>
+        <rect x="0" y="34" width="100" height="3" fill="#00338d" />
       </svg>
     ),
   },
   {
     name: "PwC",
     logo: (
-      <svg viewBox="0 0 70 36" width="70" height="36">
-        <text x="0" y="27" fontFamily="'Helvetica Neue',sans-serif" fontSize="26" fontWeight="800" fill="#111">PwC</text>
+      <svg viewBox="0 0 80 40" width="80" height="40">
+        <text x="0" y="30" fontFamily="'Arial',sans-serif" fontSize="28" fontWeight="800" fill="#111">PwC</text>
+        <path d="M50 10 L60 25 L70 10" stroke="#d32f2f" strokeWidth="2" fill="none" />
       </svg>
     ),
   },
   {
     name: "EY",
     logo: (
-      <svg viewBox="0 0 50 36" width="50" height="36">
-        <text x="0" y="27" fontFamily="'Helvetica Neue',sans-serif" fontSize="28" fontWeight="900" fill="#111" letterSpacing="2">EY</text>
+      <svg viewBox="0 0 60 40" width="60" height="40">
+        <text x="0" y="30" fontFamily="'Arial',sans-serif" fontSize="32" fontWeight="900" fill="#111" letterSpacing="2">EY</text>
+        <rect x="0" y="34" width="60" height="3" fill="#ffe600" />
       </svg>
     ),
   },
   {
     name: "Intuit",
     logo: (
-      <svg viewBox="0 0 80 36" width="80" height="36">
-        <text x="0" y="27" fontFamily="'Helvetica Neue',sans-serif" fontSize="24" fontWeight="700" fill="#111">intuit</text>
+      <svg viewBox="0 0 90 40" width="90" height="40">
+        <text x="0" y="30" fontFamily="'Arial',sans-serif" fontSize="26" fontWeight="700" fill="#365ebf">intuit</text>
+        <circle cx="75" cy="12" r="5" fill="#365ebf" />
       </svg>
     ),
   },
   {
     name: "Xero",
     logo: (
-      <svg viewBox="0 0 70 36" width="70" height="36">
-        <text x="0" y="27" fontFamily="'Helvetica Neue',sans-serif" fontSize="26" fontWeight="800" fill="#111">xero</text>
+      <svg viewBox="0 0 80 40" width="80" height="40">
+        <text x="0" y="30" fontFamily="'Arial',sans-serif" fontSize="28" fontWeight="800" fill="#13b5ea">xero</text>
+        <path d="M50 8 L58 16 L50 24" stroke="#13b5ea" strokeWidth="2" fill="none" />
       </svg>
     ),
   },
@@ -139,7 +146,7 @@ export const INTEGRATIONS = [
 ];
 
 export const FOOTER_LINKS = {
-  Product: ["General Ledger", "Bank Accounts", "Reports", "Bills & POs", "Invoicing"],
+  Product: ["Financial Management", "HR & Payroll", "Inventory", "CRM", "Manufacturing"],
   Company: ["About Us", "Careers", "Blog", "Press", "Contact"],
   Resources: ["User Guide", "Help Center", "Changelog", "Status"],
   Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
@@ -147,57 +154,57 @@ export const FOOTER_LINKS = {
 
 export const TIMELINE_STEPS = [
   {
-    tag: "Built on GAAP Standards.",
+    tag: "All-in-One Business Platform.",
     title: null,
-    body: "LedgerPro is built on foundational accounting principles—Double Entry, Accrual Basis, and Full Disclosure. It conforms to the standards of your firm and delivers accurate outputs that meet the professional requirements your clients expect.",
+    body: "BisonTechs unifies every aspect of your business — finance, HR, inventory, sales, manufacturing, and more. One system, one source of truth, complete visibility across your entire organization.",
   },
   {
     tag: null,
-    title: "Precision in every entry.",
-    body: "Maintain absolute control over your General Ledger. Every transaction is tracked with a full audit trail, allowing you to review, approve, and finalize entries with confidence. No more guessing—just pure, verifiable financial data.",
+    title: "Automate across departments.",
+    body: "Eliminate silos and manual data entry. When sales close, inventory updates automatically. When inventory moves, financials reflect it instantly. Every department works in harmony.",
   },
   {
-    tag: "Expand your firm's capacity.",
+    tag: "Scale without complexity.",
     title: null,
-    body: "Streamline your month-end close and year-end reporting. LedgerPro gives your team the capacity to manage more complex engagements and more clients without compromising on the quality of your work product.",
+    body: "Grow your business without adding complexity. BisonTechs scales with you — from startup to enterprise. Add modules, users, and locations as needed, all within the same unified platform.",
   },
 ];
 
-// Accounting-related images with Unsplash URLs + text overlay
+// ERP-related images with Unsplash URLs + text overlay
 export const ACCOUNTING_SLIDES = [
   {
     img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
-    tag: "Smart Invoicing",
-    title: "Send invoices. Get paid faster.",
-    body: "Create professional invoices in seconds. Automated reminders and real-time tracking ensure you never lose a payment again.",
+    tag: "Unified Operations",
+    title: "One platform for your entire business.",
+    body: "Finance, HR, inventory, CRM, manufacturing — all connected in real-time. No more silos, just seamless operations.",
     accent: "#00ffbe",
   },
   {
     img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
     tag: "Real-time Analytics",
     title: "Data that drives decisions.",
-    body: "Live dashboards with P&L, cash flow, and KPIs. Know exactly where your business stands — at any moment.",
+    body: "Live dashboards with cross-departmental KPIs. Know exactly where your business stands — finance, operations, and growth.",
     accent: "#6c63ff",
   },
   {
     img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80",
-    tag: "Bank Reconciliation",
-    title: "Every transaction, automatically matched.",
-    body: "Connect your bank accounts and watch LedgerPro transactions.",
+    tag: "Supply Chain Automation",
+    title: "From procurement to delivery, automated.",
+    body: "Connect vendors, manage inventory, and optimize logistics. When inventory moves, everything updates automatically.",
     accent: "#ff6b6b",
   },
   {
     img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
     tag: "Team Collaboration",
-    title: "Work with your accountant, seamlessly.",
-    body: "Invite your accountant or team members. Role-based access, audit logs, and real-time collaboration built in.",
+    title: "Every department, working together.",
+    body: "Finance, HR, sales, and operations teams collaborate in real-time. Role-based access, audit logs, and unified workflows.",
     accent: "#f9ca24",
   },
   {
     img: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&q=80",
-    tag: "Tax Ready",
-    title: "Tax season, stress-free.",
-    body: "Export tax packages instantly. Organized categories, depreciation schedules, and everything your CPA needs.",
+    tag: "Scale Without Limits",
+    title: "Grow without adding complexity.",
+    body: "Add modules, users, and locations as needed. From startup to enterprise, BisonTechs scales with your business.",
     accent: "#00ffbe",
   },
 ];
@@ -205,8 +212,8 @@ export const ACCOUNTING_SLIDES = [
 export const BLOG_POSTS = [
   {
     id: 1,
-    title: "Cloud Accounting: The Future of Financial Management",
-    excerpt: "Discover how cloud-based accounting solutions are revolutionizing the way businesses manage their finances, offering real-time insights and unprecedented accessibility.",
+    title: "Cloud ERP: The Future of Business Management",
+    excerpt: "Discover how cloud-based ERP solutions are revolutionizing the way businesses operate, offering real-time insights and unprecedented accessibility across all departments.",
     image: "/blog/blog_cloud_accounting_1777147772479.png",
     category: "Technology",
     readTime: "5 min read",
@@ -219,10 +226,10 @@ export const BLOG_POSTS = [
   },
   {
     id: 2,
-    title: "GAAP Compliance Made Simple: A 2026 Guide",
-    excerpt: "Navigate the complexities of GAAP compliance with our comprehensive guide. Learn best practices for maintaining accurate financial records and avoiding common pitfalls.",
+    title: "ERP Implementation Guide: A 2026 Roadmap",
+    excerpt: "Navigate the complexities of ERP implementation with our comprehensive guide. Learn best practices for seamless deployment and maximizing ROI across your organization.",
     image: "/blog/blog_gaap_compliance_1777147847688.png",
-    category: "Compliance",
+    category: "Implementation",
     readTime: "8 min read",
     date: "March 10, 2026",
     author: {
@@ -233,8 +240,8 @@ export const BLOG_POSTS = [
   },
   {
     id: 3,
-    title: "Month-End Close: Streamline Your Process",
-    excerpt: "Transform your month-end close from a stressful ordeal into a smooth, efficient process. Expert tips and strategies to save time and improve accuracy.",
+    title: "Supply Chain Optimization with ERP",
+    excerpt: "Transform your supply chain from a cost center into a competitive advantage. Expert tips and strategies to streamline procurement, inventory, and logistics.",
     image: "/blog/blog_month_end_close_1777147813967.png",
     category: "Operations",
     readTime: "6 min read",
@@ -247,8 +254,8 @@ export const BLOG_POSTS = [
   },
   {
     id: 4,
-    title: "Digital Transformation in Accounting",
-    excerpt: "How modern accounting firms are leveraging technology to drive efficiency, improve client service, and stay competitive in a rapidly evolving industry.",
+    title: "Digital Transformation in Business Operations",
+    excerpt: "How modern companies are leveraging ERP technology to drive efficiency, improve collaboration, and stay competitive in a rapidly evolving market.",
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
     category: "Strategy",
     readTime: "7 min read",
@@ -261,10 +268,10 @@ export const BLOG_POSTS = [
   },
   {
     id: 5,
-    title: "Cash Flow Management Best Practices",
-    excerpt: "Master the art of cash flow management with proven strategies that help businesses maintain liquidity and make informed financial decisions.",
+    title: "Unified Data: Breaking Down Business Silos",
+    excerpt: "Master the art of unified business management with proven strategies that help organizations eliminate data silos and make informed decisions across all departments.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-    category: "Finance",
+    category: "Management",
     readTime: "5 min read",
     date: "February 20, 2026",
     author: {

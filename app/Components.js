@@ -932,7 +932,7 @@ export const NAV_LINKS = [
       { title: "Careers", desc: "Join our growing team" },
       { title: "Press", desc: "News & media coverage" },
       { title: "Contact", desc: "Get in touch with us" },
-      { title: "Partners", desc: "Become a LedgerPro partner" }
+      { title: "Partners", desc: "Become a BisonTechs partner" }
     ]
   },
 ];
@@ -949,9 +949,9 @@ export const PLANS = [
 ];
 
 export const TESTIMONIALS = [
-  { text: "LedgerPro transformed how we manage our books. The real-time insights are game-changing!", name: "Sarah Johnson", role: "CFO at TechStart", avatar: "SJ", color: "#6c63ff" },
-  { text: "Finally, accounting software that actually understands how businesses work. Highly recommended!", name: "Michael Chen", role: "Founder at OmniHealth", avatar: "MC", color: "#00ffbe" },
-  { text: "The automated reports save us hours every week. Our accountant loves it!", name: "Emily Rodriguez", role: "Finance Lead", avatar: "ER", color: "#ff6b6b" },
+  { text: "BisonTechs transformed how we run our entire business. The real-time insights across all departments are game-changing!", name: "Sarah Johnson", role: "CEO at TechStart", avatar: "SJ", color: "#6c63ff" },
+  { text: "Finally, ERP software that actually understands how modern businesses operate. Highly recommended!", name: "Michael Chen", role: "Founder at OmniHealth", avatar: "MC", color: "#00ffbe" },
+  { text: "The unified platform saves us hours every week. Our operations team loves it!", name: "Emily Rodriguez", role: "Operations Director", avatar: "ER", color: "#ff6b6b" },
 ];
 
 export const TRUSTED_COMPANIES = [

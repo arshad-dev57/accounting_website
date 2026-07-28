@@ -81,101 +81,182 @@ export default function PricingPage() {
 
             <CookieBanner />
 
-            {/* ── NAVBAR ── */}
-            <nav style={{
-                position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
-                background: scrolled ? "#ffffff" : "transparent",
-                transition: "all .35s ease",
-                padding: "0 5%", height: 68,
-                display: "flex", alignItems: "center", justifyContent: "space-between",
-            }} className={scrolled ? "nav-glass" : ""}>
-                <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: 10, cursor: "pointer" }}>
-                        <div style={{ width: 36, height: 36, borderRadius: 10, background: "linear-gradient(135deg,#00ffbe,#6c63ff)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 14px rgba(0,201,167,.35)" }}>
-                            <span style={{ color: "#fff", fontSize: 14, fontWeight: 900, fontFamily: "monospace", letterSpacing: "-1px" }}>LP</span>
-                        </div>
-                        <span style={{ fontSize: 19, fontWeight: 800, letterSpacing: "-0.5px" }}>LedgerPro</span>
-                    </div>
-                </Link>
+            {/* ── TOP BANNER ── */}
+            <div style={{
+                background: "#02113c",
+                padding: "7px 5%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: 12,
+                fontSize: 12,
+                color: "#fff",
+                fontWeight: 500,
+            }}>
+                <span style={{ color: "#1088dd", fontWeight: 700 }}>Process is All You Need</span>
+                <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 10 }}>|</span>
+                <a href="#" style={{ color: "#fff", textDecoration: "none", fontWeight: 600, display: "flex", alignItems: "center", gap: 5 }}>
+                    Read our whitepaper
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
 
-                <div className="desktop-nav" ref={dropdownRef} style={{ display: "flex", alignItems: "center", gap: 32 }}>
-                    {NAV_LINKS.map((item) => (
-                        <div key={item.label} style={{ position: "relative" }}>
-                            <button
-                                className={`nav-link${openDropdown === item.label ? " open" : ""}`}
-                                onClick={() => {
-                                    if (item.href && item.href !== "#") {
-                                        window.location.href = item.href;
-                                    } else {
-                                        setOpenDropdown(openDropdown === item.label ? null : item.label);
-                                    }
-                                }}
-                                onMouseEnter={() => item.dropdown && setOpenDropdown(item.label)}
-                            >
-                                {item.label}
-                                {item.dropdown && (
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style={{ marginLeft: 5 }}>
-                                        <path d="M2 4L6 8L10 4" stroke="#888" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
+            {/* ── HEADER ── */}
+            <header style={{
+                position: "fixed",
+                top: 32,
+                left: 0,
+                right: 0,
+                zIndex: 100,
+                padding: "0 40px",
+                height: 60,
+                display: "flex",
+                alignItems: "center",
+            }}>
+                {/* Floating pill navbar */}
+                <div style={{
+                    width: "100%",
+                    background: scrolled ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.82)",
+                    backdropFilter: "blur(14px)",
+                    WebkitBackdropFilter: "blur(14px)",
+                    border: "0.5px solid rgba(0,0,0,0.08)",
+                    borderRadius: 14,
+                    boxShadow: scrolled ? "0 4px 24px rgba(0,0,0,0.08)" : "0 2px 12px rgba(0,0,0,0.04)",
+                    transition: "all .3s ease",
+                    padding: "0 20px",
+                    height: 54,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                }}>
+                    {/* Logo — using image from public folder */}
+                    <Link href="/" style={{ textDecoration: "none" }}>
+                        <div style={{ display: "flex", alignItems: "center", gap: 8, cursor: "pointer" }}>
+                            <img src="/bisontechs.png" alt="BisonTechs" style={{ height: 55, width: "auto", objectFit: "contain" }} />
+                        </div>
+                    </Link>
+
+                    {/* Navigation */}
+                    <nav className="desktop-nav" ref={dropdownRef} style={{ display: "flex", alignItems: "center", gap: 32 }}>
+                        {NAV_LINKS.map((item) => (
+                            <div key={item.label} style={{ position: "relative" }}>
+                                <button
+                                    style={{
+                                        background: "none",
+                                        border: "none",
+                                        fontSize: 13.5,
+                                        fontWeight: 500,
+                                        color: "#222",
+                                        cursor: "pointer",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        gap: 4,
+                                        padding: "8px 0",
+                                        fontFamily: "inherit",
+                                    }}
+                                    onClick={() => {
+                    if (item.href && item.href !== "#" && !item.dropdown) {
+                      window.location.href = item.href;
+                    } else {
+                      setOpenDropdown(openDropdown === item.label ? null : item.label);
+                    }
+                  }}
+                                    onMouseEnter={() => item.dropdown && setOpenDropdown(item.label)}
+                                >
+                                    {item.label}
+                                    {item.dropdown && (
+                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                                            <path d="M2 3.5L5 6.5L8 3.5" stroke="#888" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    )}
+                                </button>
+                                {item.dropdown && openDropdown === item.label && (
+                                    <div style={{
+                                        position: "absolute",
+                                        top: "100%",
+                                        left: 0,
+                                        background: "#fff",
+                                        borderRadius: 12,
+                                        boxShadow: "0 10px 40px rgba(0,0,0,0.12)",
+                                        padding: "8px 0",
+                                        minWidth: 220,
+                                        zIndex: 1000,
+                                        border: "1px solid rgba(0,0,0,0.06)",
+                                    }} onMouseLeave={() => setOpenDropdown(null)}>
+                                        {item.dropdown.map((d) => (
+                                            <Link key={d.title} href={d.href || "#"} style={{ textDecoration: "none" }}>
+                                                <div style={{
+                                                    padding: "10px 16px",
+                                                    transition: "background 0.2s",
+                                                    cursor: "pointer",
+                                                }} onMouseOver={e => e.currentTarget.style.background = "#f8f9fa"} onMouseOut={e => e.currentTarget.style.background = "transparent"}>
+                                                    <div style={{ fontSize: 14, fontWeight: 600, color: "#111", marginBottom: 2 }}>{d.title}</div>
+                                                    <div style={{ fontSize: 12, color: "#888" }}>{d.desc}</div>
+                                                </div>
+                                            </Link>
+                                        ))}
+                                    </div>
                                 )}
-                            </button>
-                            {item.dropdown && openDropdown === item.label && (
-                                <div className="dropdown-menu" onMouseLeave={() => setOpenDropdown(null)}>
-                                    {item.dropdown.map((d) => (
-                                        <Link key={d.title} href={d.href || "#"} style={{ textDecoration: "none" }}>
-                                            <div className="dropdown-item">
-                                                <span className="dropdown-item-title">{d.title}</span>
-                                                <span className="dropdown-item-desc">{d.desc}</span>
-                                            </div>
-                                        </Link>
-                                    ))}
-                                </div>
-                            )}
-                        </div>
-                    ))}
-                </div>
+                            </div>
+                        ))}
+                    </nav>
 
-                <div className="desktop-nav" style={{ display: "flex", alignItems: "center", gap: 16 }}>
-                    <button className="nav-link">Sign in</button>
-                    <button className="btn-dark">Get started</button>
-                </div>
+                    {/* Action Buttons */}
+                    <div className="desktop-nav" style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                        <button style={{
+                            background: "none",
+                            border: "none",
+                            fontSize: 13.5,
+                            fontWeight: 600,
+                            color: "#222",
+                            cursor: "pointer",
+                            padding: "6px 12px",
+                            fontFamily: "inherit",
+                        }}>Sign In</button>
+                        <button style={{
+                            background: "#1088dd",
+                            color: "#fff",
+                            border: "none",
+                            fontSize: 13.5,
+                            fontWeight: 700,
+                            padding: "8px 20px",
+                            borderRadius: 8,
+                            cursor: "pointer",
+                            fontFamily: "inherit",
+                            letterSpacing: "-0.2px",
+                        }}>Contact</button>
+                    </div>
 
-                <button
-                    className="mob-btn"
-                    onClick={() => setMenuOpen(o => !o)}
-                    style={{
-                        display: "none",
-                        background: "none", border: "none", cursor: "pointer",
-                        flexDirection: "column", gap: 5, padding: 4,
-                    }}
-                >
-                    {[0, 1, 2].map(i => (
-                        <span key={i} style={{
-                            display: "block", width: 24, height: 2.5, background: "#111",
-                            borderRadius: 2, transition: "all .3s",
-                            transform: menuOpen
-                                ? (i === 0 ? "rotate(45deg) translate(5px,5px)"
-                                    : i === 2 ? "rotate(-45deg) translate(5px,-5px)"
-                                        : "scaleX(0)")
-                                : "none",
-                            opacity: menuOpen && i === 1 ? 0 : 1,
-                        }} />
-                    ))}
-                </button>
-            </nav>
+                    {/* Mobile Menu Button */}
+                    <button
+                        className="mobile-menu-btn"
+                        style={{
+                            display: "none",
+                            background: "none",
+                            border: "none",
+                            cursor: "pointer",
+                            padding: 8,
+                        }}
+                        onClick={() => setMenuOpen(o => !o)}
+                    >
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#111" strokeWidth="2">
+                            <path d="M3 12h18M3 6h18M3 18h18"/>
+                        </svg>
+                    </button>
+                </div>
+            </header>
 
             {/* ── MOBILE MENU ── */}
             {menuOpen && (
-                <div
-                    className="mob-menu"
-                    style={{
-                        position: "fixed", top: 68, left: 0, right: 0,
-                        background: "#fff", padding: "24px 5%", zIndex: 99,
-                        boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
-                        maxHeight: "calc(100vh - 68px)",
-                        overflowY: "auto",
-                    }}
-                >
+                <div style={{
+                    position: "fixed", top: 92, left: 0, right: 0,
+                    background: "#fff", padding: "24px 5%", zIndex: 99,
+                    boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+                    maxHeight: "calc(100vh - 92px)",
+                    overflowY: "auto",
+                }}>
                     {NAV_LINKS.map(item => (
                         <div key={item.label}>
                             <button
@@ -207,7 +288,7 @@ export default function PricingPage() {
                         <button style={{ width: "100%", padding: "13px", borderRadius: 100, border: "1.5px solid #ddd", background: "transparent", fontWeight: 600, cursor: "pointer", fontFamily: "inherit", fontSize: 15 }}>
                             Sign in
                         </button>
-                        <button style={{ width: "100%", padding: "13px", borderRadius: 100, background: "#00ffbe", color: "#111", fontWeight: 700, border: "none", cursor: "pointer", fontFamily: "inherit", fontSize: 15 }}>
+                        <button style={{ width: "100%", padding: "13px", borderRadius: 100, background: "#1088dd", color: "#fff", fontWeight: 700, border: "none", cursor: "pointer", fontFamily: "inherit", fontSize: 15 }}>
                             Get started
                         </button>
                     </div>
@@ -358,6 +439,21 @@ export default function PricingPage() {
                                 <span style={{ fontSize: 18, fontWeight: 800, letterSpacing: "-0.5px", color: "#111" }}>LedgerPro</span>
                             </div>
                             <p style={{ fontSize: "clamp(12px, 3.5vw, 14px)", color: "#aaa", lineHeight: 1.6, textAlign: "center" }}>The complete financial operating system.</p>
+                            <div style={{ marginTop: 22 }}>
+                                <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8, justifyContent: "center" }}>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aaa" strokeWidth="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                        <path d="M22 6l-10 7L2 6"/>
+                                    </svg>
+                                    <a href="mailto:info@bisonstechs.com" style={{ fontSize: "clamp(12px, 3.5vw, 14px)", color: "#aaa", textDecoration: "none" }}>info@bisonstechs.com</a>
+                                </div>
+                                <div style={{ display: "flex", alignItems: "center", gap: 8, justifyContent: "center" }}>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aaa" strokeWidth="2">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                    </svg>
+                                    <a href="tel:+17867618327" style={{ fontSize: "clamp(12px, 3.5vw, 14px)", color: "#aaa", textDecoration: "none" }}>+1 (786)-761-8327</a>
+                                </div>
+                            </div>
                         </div>
                         {Object.entries(FOOTER_LINKS).map(([section, links]) => (
                             <div key={section} style={{ textAlign: "center" }}>
